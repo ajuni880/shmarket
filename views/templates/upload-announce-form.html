@@ -1,0 +1,86 @@
+<form name="uploadAnnounceForm" enctype="multipart/form-data" novalidate>
+    <div class="well">
+      <h1><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Describe tu producto</h1>
+    </div>
+    <div class="well margin-top">
+        <!--Announcement title-->
+        <div class="row margin-top">
+            <div class="form-group col-md-6">
+                <label for="name">Título del anuncio * </label>
+                <input type="text" class="form-control" ng-model="announce.title"
+								ng-pattern="/[a-zA-Z0-9]{5,20}$/" name="title" placeholder="Ordenador Dell Opltiplex 760 Core 2 DUO" required>
+            </div>
+
+            <!--We select the category. -->
+            <div class="form-group col-md-3">
+                <label for="product-category control-label">Seleciona categoría *</label>
+                <select for="category-product" ng-model="selectCategory" class="form-control"
+                ng-options="category.name for category in categoriesArray track by category.categoryId">
+                <!-- <option ng-repeat="c in categoriesArray" value="{{c.categoryId}}">{{c.name}}</option> -->
+							  </select>
+            </div>
+			        <!--Price-->
+						<div class="form-group col-md-3">
+								<label for="product-price">Precio *</label>
+								<input class="form-control" type="text" ng-model="announce.price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+								placeholder="250" min="1" step="1" ng-currency  required/>
+						</div>
+        </div>
+
+
+				<div class="row margin-top">
+					<div class="form-group col-md-4">
+							<label for="operation">¿Quieres vender o intercambiar? *</label>
+							<div class="radio">
+							  <label><input type="radio" name="operation" ng-model="announce.operation" value="sell" required>Venta</label>
+							</div>
+							<div class="radio">
+								<label><input type="radio" name="operation" ng-model="announce.operation" value="exchange" required>Intercambio</label>
+							</div>
+					</div>
+
+
+
+					<div class="form-group col-md-4">
+							<label for="operation">Dirección o Ciudad *</label>
+							<input type="text" name="city" class="form-control" ng-model="announce.direction"
+							 required placeholder="Calle Balmes, Barcelona">
+					</div>
+
+
+				</div>
+
+  			<!--Textarea-->
+				<div class="row">
+					<div class="form-group margin-top col-md-8">
+							<label for="description">Descripción *</label>
+							<textarea class="form-control" ng-model="announce.description" ng-pattern="/^\w{10,500}$/"
+							name="description" placeholder="Describe tu producto aquí..." rows="5" cols="80" required></textarea>
+              <span class="help-block" ng-show="uploadAnnounceForm.description.$error.pattern">Mínimo 10 carácteres</span>
+
+					</div>
+				</div>
+
+        <!--To upload photo-->
+				<div class="row">
+					<div class="form-group margin-top col-md-12" ng-init="validateImages()">
+	            <label for="photos">Sube las fotos de tu producto *</label>
+							<input type="file" class="form-control" id="uploadPhotos" accept="image/*" required>
+	        </div>
+          <div class="photos-details">
+            <ul>
+
+            </ul>
+          </div>
+				</div>
+
+				<div class="form-group-buttons margin-top">
+					<span ng-click="hideFormLogin()" class="fa fa-arrow-left" aria-hidden="true"></span>
+          <button type="submit" ng-click="entryAnnounce()" class="btn btn-form" ng-disabled="uploadAnnounceForm.$invalid" name="button">Añadir producto</button>
+
+				</div>
+    </div>
+</form>
+<div class="alert alert-danger" ng-show="noAnnounceFound">
+  Error. Subiendo anuncio intentálo más tarde.
+</div>

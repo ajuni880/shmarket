@@ -1,0 +1,26 @@
+
+<table class="table table-striped table-responsive">
+  <thead>
+    <tr>
+      <th>Foto perfil</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>Fecha de registro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr dir-paginate="u in filteredData | itemsPerPage: pageSize" current-page="currentPage">
+      <td><img ng-src="images/users/{{u.userPhoto || 'account-avatar.png'}}" alt="Account photo"></td>
+      <td>{{u.fullName}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.telephone}}</td>
+      <td>{{u.registryDate}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <div class="text-center" boundary-links="true">
+    <dir-pagination-controls boundary-links="true" template-url="views/templates/dir-pagination-controls.html"></dir-pagination-controls>
+  </div>
+</div>

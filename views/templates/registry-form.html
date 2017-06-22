@@ -1,0 +1,49 @@
+<div class="registerContainer">
+		<span ng-click="hideForm()" class="closeButton fa fa-times" aria-hidden="true"></span>
+		<h2 class="text-center">Crea tu cuenta</h2>
+		<form name="registerForm" ng-submit="registerForm.$valid && doRegister()">
+				<div class="form-group">
+					<label for="fullname">Nombre completo</label>
+					<input type="text" name="fullname" ng-model="user.fullname" placeholder="Nombre completo"
+					ng-minlength="3" ng-pattern="/^[a-zA-Z]/" class="form-control" id="fullname" required>
+					<span ng-show="registerForm.fullname.$touched && registerForm.fullname.$error.required">*Campo requerido</span>
+					<span ng-show="registerForm.fullname.$error.minlength">*Nombre corto</span>
+				</div>
+
+				<div class="form-group">
+					<label>Email </label>
+					<input type="email" name="email" placeholder="Email" ng-model="user.email" class="form-control"
+					 required ng-pattern="/^\w+@[a-zA-Z]{3,}\.[a-zA-Z]{2,5}/">
+					<span ng-show="registerForm.email.$touched && registerForm.email.$error.required">*Campo requerido</span>
+				</div>
+
+				<div class="form-group">
+					<label>Contraseña</label>
+					<input type="password" name="pass" placeholder="Contraseña" ng-model="user.pass" class="form-control" required
+					ng-minlength="6">
+					<span ng-show="registerForm.pass.$touched && registerForm.pass.$error.required">*Campo requerido</span>
+					<span ng-show="registerForm.pass.$error.minlength">*Contraseña débil</span>
+				</div>
+
+				<div class="form-group">
+					<label>Confirmar contraseña</label>
+					<input type="password" name="passRp" placeholder="Confirma contraseña" ng-model="user.passRp" class="form-control"
+					required ng-pattern="{{user.pass}}">
+					<span ng-show="registerForm.passRp.$touched && registerForm.passRp.$error.required">*Campo requerido</span>
+					<span ng-show="registerForm.passRp.$error.pattern">*Contraseñas no coinciden</span>
+
+				</div>
+
+				<div class="form-group">
+						<label for="operation">Teléfono *</label>
+						<input type="number" name="telephone" ng-minlength="9" ng-maxlength="9" class="form-control" ng-model="user.telephone"
+						 required placeholder="654321867">
+				</div>
+
+				<button type="submit" name="register" class="btn btn-primary" ng-disabled="registerForm.$invalid">Registrarme</button>
+		</form>
+
+		<div class="alert alert-danger margin-top" ng-show="emailExists">
+			Email already exits.
+		</div>
+</div>

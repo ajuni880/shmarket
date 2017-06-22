@@ -1,0 +1,31 @@
+<!-- <a ng-repeat="i in [0,1,2,3,4,5]" href="views/announce-details.html" class="j-col"> -->
+  <a ng-repeat="a in announcesArray | filter:filterValue" href="announce-details.html?id={{a.announceId}}" target="__blank" class="j-col">
+    <div class="j-col__wrapper">
+        <img ng-src="images/announces/{{a.mainPhoto}}" alt="">
+        <div class="caption">
+            <p class="title">{{a.title}}</p>
+
+            <p class="description">{{a.description | countLetters}}</p>
+            <!-- <span class="an-author">Publicado {{i.uploadDate | date:"MMM d, y h:mm:ss a"}}</span> -->
+        </div>
+        <div class="price-add-list-btn">
+
+          <span ng-class="{'fa fa-exchange':a.operation == 'EXCHANGE','price':a.price > '0'}" title="Intercambio">
+            {{a.price | currency:undefined:0}}
+          </span>
+          <span class="announce-category">{{a.catName}}</span>
+          <!-- <span class="fa fa-heart-o" aria-hidden="true"></span> -->
+        </div>
+        <div class="an-author">
+          <p><span class="fa fa-user-circle"></span> {{a.userName}}</p>
+        </div>
+
+    </div>
+</a>
+<div id="backButton">
+
+</div>
+
+<div class="alert alert-info margin-top" ng-show="noAnnounceFound">
+  La búsqueda no ha encontrado coincidencias.<a href="index.html">Back</a>
+</div>

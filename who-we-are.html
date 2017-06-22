@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="marketApp">
+
+    <head>
+        <title>Quienes somos</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" HREF="images/logo.png" />
+        <!-- jQuery-->
+        <script src="vendors/jquery/js/jQuery.js" type="text/javascript"></script>
+
+        <!--Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css" />
+        <script src="vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    		<!-- Angular-->
+        <script src="vendors/angular/js/angular.min.js" type="text/javascript"></script>
+        <script src="vendors/angular/js/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+        <script src="vendors/angular/js/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
+        <script src="vendors/angular/js/angular-i18n/angular-locale_es-es.js" type="text/javascript"></script>
+        <script src="vendors/angular/js/dirPagination.js" type="text/javascript" xml:space="preserve"></script>
+        <!-- Swiper library-->
+        <link rel="stylesheet" type="text/css" href="vendors/swiper-3.4.2/dist/css/swiper.min.css" />
+        <script src="vendors/swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript"></script>
+
+        <!-- Google fonts library -->
+        <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+
+        <!-- Own code-->
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    		<link rel="stylesheet" type="text/css" href="css/forms.css" />
+
+        <!-- Model-->
+        <script src="js/app.js" type="text/javascript"></script>
+
+        <!-- Controllers -->
+        <script src="js/controller/MainController.js" type="text/javascript"></script>
+    </head>
+
+    <body class="site-content" ng-controller="MainController as MainCtrl">
+        <header >
+          <div class="container">
+              <nav class="navbar-header-top">
+
+                  <div class="navbar-logo">
+                      <a href="index.html">
+                          <img src="images/logo.png" alt="" width="120">
+                      </a>
+                  </div>
+                </nav>
+              </div>
+        </header>
+        <!-- <div class="" style="background-image:url(images/bg.jpg)"></div> -->
+        <div class="container wrapper content">
+        <main>
+            <section class="section-announce-details">
+              <div class="row">
+                <div class="col-md-6">
+
+                    <h2>Quiénes somos?</h2>
+                    <p>
+                      shMarket es una compañia dedicada a la venta de productos electrónicos de segunda mano.
+                      Aquí podrás vender todos aquellos productos que ya no uses o, si lo prefieres,
+                      intercambiarlos por otros. Es muy simple. Cuelgas tu producto, selecciona su precio,
+                      descripción, especificaciones técnicas o, si el producto es de intercambio, acuerda con el
+                      comprador un sitio para realizar la transacción.<br>
+                      Así el propósito de shMarket es hacer un mundo muchísimo más colaborativo pero sobre
+                      todo más ecológico. Y de esta pequeña idea fue como nació shMarket.
+                    </p>
+
+                </div>
+                <div class="col-md-6">
+                  <img src="images/bg.jpg" alt="Quienes somos">
+                </div>
+              </div>
+            </section>
+        </main>
+      </div>
+
+
+      <footer-template></footer-template>
+    </body>
+
+</html>

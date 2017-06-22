@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="marketApp">
+
+    <head>
+        <title>Preguntas frecuentes</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" HREF="images/logo.png" />
+        <!-- jQuery-->
+        <script src="vendors/jquery/js/jQuery.js" type="text/javascript"></script>
+
+        <!--Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css" />
+        <script src="vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    		<!-- Angular-->
+        <script src="vendors/angular/js/angular.min.js" type="text/javascript"></script>
+        <script src="vendors/angular/js/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+        <script src="vendors/angular/js/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
+        <script src="vendors/angular/js/angular-i18n/angular-locale_es-es.js" type="text/javascript"></script>
+        <script src="vendors/angular/js/dirPagination.js" type="text/javascript" xml:space="preserve"></script>
+        <!-- Swiper library-->
+        <link rel="stylesheet" type="text/css" href="vendors/swiper-3.4.2/dist/css/swiper.min.css" />
+        <script src="vendors/swiper-3.4.2/dist/js/swiper.min.js" type="text/javascript"></script>
+
+        <!-- Google fonts library -->
+        <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+
+        <!-- Own code-->
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    		<link rel="stylesheet" type="text/css" href="css/forms.css" />
+
+        <!-- Model-->
+        <script src="js/app.js" type="text/javascript"></script>
+        <!-- Controllers -->
+        <script src="js/controller/MainController.js" type="text/javascript"></script>
+
+    </head>
+
+    <body class="site-content" ng-controller="MainController as MainCtrl">
+      <header >
+        <div class="container">
+            <nav class="navbar-header-top">
+
+                <div class="navbar-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="" width="120">
+                    </a>
+                </div>
+              </nav>
+            </div>
+      </header>
+
+        <div class="container wrapper content">
+        <main>
+            <section class="section-faq">
+              <h2>Preguntas frecuentes</h2>
+              <div class="faq-block">
+                <h3 class="faq-block-question">1. Consejos útiles</h3>
+                <div class="faq-block-answer">
+                  <p>No hace falta mucho esfuerzo para subir un buen anuncio a shMarket. Aquí tienes algunos consejos:</p>
+                  <ul>
+                    <li>¡Una imagen vale más que mil palabras!</li>
+                    <li>¡El titular vende!</li>
+                    <li>El título sirve no sólo para presentar tu producto, sino que es clave en búsquedas concretas. Si el producto tiene talla o modelo,especifícalo también en el título.</li>
+                    <li>¡Mejor descripción, mejor resultado! Pero sobre todo, se honesto y describe el producto tal y como es.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faq-block">
+                <h3 class="faq-block-question">2. Buscar producto</h3>
+                <div class="faq-block-answer">
+                  <p>Accede a la herramienta de búsqueda (icono de filtros) e
+                    introduce el nombre del producto que quieres comprar.
+                   También puedes buscar por categorías para ir directo a los
+                   productos que más te interesan (ordenadores, smartphones,videojuegos, etc).
+                   También puedes buscar por filtros avanzados(precio,ciudad)</p>
+                </div>
+              </div>
+
+              <div class="faq-block">
+                <h3 class="faq-block-question">3. Subir producto</h3>
+                <div class="faq-block-answer">
+                  <p>Antes de todo tienes que tener una cuenta y estar loguedo en la web.
+                    Te diriges al botón rojo de publicar anuncio y estarás a unos pasos de subir tu producto,
+                    verás que es muy simple e intuitiva: sube una o más fotos, establece un precio, completa el título, la descripción y selecciona la categoría correspondiente a tu producto.
+                    Una vez hecho ésto, pulsa el botón “Subir producto” y prepárate para recibir ofertas en tu área personal.</p>
+                </div>
+              </div>
+
+              <div class="faq-block">
+                <h3 class="faq-block-question">4. Modificar producto</h3>
+                <div class="faq-block-answer">
+                  <p>Si se desea, se podrá modificar el producto. Los campos que se podrán modificar
+                  serán los mismos que los que completaste al subir el anuncio. Recomendamos que te asegures bien
+                  antes de subir tu producto, ya que una vez el producto esté reservado ya no se podrá modificar su precio
+                </p>
+                </div>
+              </div>
+
+              <div class="faq-block">
+                <h3 class="faq-block-question">5. Especificaciones técnicas</h3>
+                <div class="faq-block-answer">
+                  <p>A la hora de subir tu anuncio, procura poner todas las especificaciones técnicas del producto.
+                    De esta manera harás que tu anuncio sea más accesible para los posibles compradores. Y todos sabemos
+                    que uno a la hora de comprar un producto, el más mínimo detalle hace la diferencia.
+                </p>
+                </div>
+              </div>
+
+            </section>
+        </main>
+      </div>
+
+
+      <footer-template></footer-template>
+    </body>
+
+</html>

@@ -1,0 +1,58 @@
+<div class="container">
+    <nav class="navbar-header-top">
+
+        <div class="navbar-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="" width="120">
+            </a>
+        </div>
+
+        <div class="navbar-links" id="navbar">
+
+            <!-- DISPLAYS WHEN LOGIN -->
+            <ul class="topbar" ng-show="sessionOpened">
+
+                <li>
+                  <a href="admin.html" ng-if="userRole == 'admin'">Dashboard</a>
+                </li>
+                <li ng-click="getMyAnnounces()">
+                    <a href="javascript:void(0)">Mis anuncios</a>
+                </li>
+
+                <li ng-click="dropdownOpen = !dropdownOpen" ng-init="!dropdownOpen">
+                    <a href="javascript:void(0)" class="my-account">
+                        <img class="account-avatar" ng-src="images/users/{{loggedUser.userPhoto || 'account-avatar.png'}}" alt="Account avatar">
+                        <ul class="dropdown-list" ng-show="dropdownOpen">
+                            <li class="dropdown-list-item" ng-click="action = 'my-profile'"><a href="#">Mi perfil</a></li>
+                            <li class="dropdown-list-item" ng-click="logOut();"><a href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </a>
+                </li>
+
+                <li ng-click="action = 'uploadAnnounceForm'">
+                    <a href="javascript:void(0)" class="btn btn-danger">Publicar anuncio</a>
+                </li>
+            </ul>
+            <!-- DISPLAYS WHEN NOT LOGIN -->
+            <ul class="topbar" ng-show="!sessionOpened">
+
+
+                <li ng-click="action = 'login'">
+                    <a href="javascript:void(0)">Iniciar sesión</a>
+                </li>
+
+
+                <li ng-click="action = 'register'">
+                    <a href="javascript:void(0)" class="btn btn-success">Registrarse</a>
+                </li>
+
+                <li ng-click="showMyAnnounces()">
+                    <a href="javascript:void(0)" class="btn btn-danger">Publicar anuncio</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</div>

@@ -1,0 +1,114 @@
+<div class="alert alert-danger col-md-7" ng-show="announcesArray.length == 0">
+  De momento no tienes anuncios.<a href="index.html">Back</a>
+</div>
+
+<div class="my-announces" ng-show="announceAction=='init' && announcesArray.length > 0">
+  <div class="my-announces-title">
+    <h4>Mis anuncios</h4>
+  </div>
+  <div class="my-announces-row" ng-repeat="a in announcesArray">
+      <div class="my-announces-img">
+        <img ng-src="images/announces/{{a.mainPhoto}}" alt="{{a.mainPhoto}}">
+      </div>
+
+      <div class="my-announces-description">
+          <h4 class="title">{{a.title}}</h4>
+          <p>{{a.description}}</p>
+
+          <p>
+            <span ng-class="{'fa fa-exchange':a.operation == 'EXCHANGE','price':a.price > '0'}" title="Intercambio">
+              {{a.price | currency:undefined:0}}
+            </span>
+            <span class="announce-category">{{a.catName}}</span><span>{{a.uploadDate}}</span></p>
+            <div class="my-announces-button">
+              <a href="announce-details.html?id={{a.announceId}}" class="btn btn-primary">Ver</a>
+              <a href="#" class="btn btn-success" ng-click="showModifyForm()">Modificar</a>
+              <a href="#" class="btn btn-danger" ng-click="removeMyAnnounce(a.announceId)">Borrar</a>
+            </div>
+      </div>
+
+  </div>
+  <a href="index.html" class="btn btn-search" >Back</a>
+</div>
+
+<div class="" ng-show="announceAction=='modifyMyAnnounce'">
+  <form name="form" novalidate>
+      <div class="well">
+        <h1><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Modificar producto</h1>
+      </div>
+      <div class="well margin-top">
+          <!--Announcement title-->
+          <div class="row margin-top">
+              <div class="form-group col-md-6">
+                  <label for="name">Título del anuncio * </label>
+                  <input type="text" class="form-control" ng-model="announceToModify.title"
+  								ng-maxlength="20" name="title" placeholder="Ordenador Dell Opltiplex 760 Core 2 DUO" required>
+                  <span ng-show="form.title.$error.maxlength">Máximo 20 carácteres</span>
+              </div>
+              <!--We select the category. -->
+              <div class="form-group col-md-3" >
+                  <label for="product-category control-label">Seleciona categoría *</label>
+                  <select for="category-product" ng-model="selectCategory" class="form-control"
+                  ng-options="category.name for category in categoriesArray track by $index"
+                  required>
+  							  </select>
+              </div>
+  			        <!--Price-->
+  						<div class="form-group col-md-3">
+  								<label for="product-price">Precio *</label>
+  								<input class="form-control" type="text" ng-model="announceToModify.price"
+  								placeholder="250" min="1" step="1" ng-currency  required/>
+  						</div>
+          </div>
+
+
+  				<div class="row margin-top">
+  					<div class="form-group col-md-4">
+  							<label for="operation">¿Quieres vender o intercambiar? *</label>
+  							<div class="radio">
+  							  <label><input type="radio" name="operation" ng-model="announceToModify.operation" value="sell"
+                    ng-checked = "announceToModify.operation == 'SELL'"
+                    required>Venta</label>
+  							</div>
+  							<div class="radio">
+  								<label><input type="radio" name="operation" ng-model="announceToModify.operation" value="exchange"
+                    ng-checked = "announceToModify.operation == 'exchange'"
+                    required>Intercambio</label>
+  							</div>
+  					</div>
+
+  					<div class="form-group col-md-4">
+  							<label for="operation">Dirección o Ciudad *</label>
+  							<input type="text" name="city" class="form-control" ng-model="announceToModify.direction"
+  							 required placeholder="Calle Balmes, Barcelona o 08014">
+  					</div>
+
+  				</div>
+
+    			<!--Textarea-->
+  				<div class="row">
+  					<div class="form-group margin-top col-md-8">
+  							<label for="description">Descripción *</label>
+  							<textarea class="form-control" ng-model="announceToModify.description"
+  							name="description" placeholder="Describe tu producto aquí..." rows="5" cols="80" required></textarea>
+  					</div>
+  				</div>
+
+  				<div class="form-group-buttons margin-top">
+  					<span ng-click="announceAction == 'init'" class="fa fa-arrow-left" aria-hidden="true"></span>
+            <button type="submit" ng-click="modifyMyAnnounce()"class="btn btn-form"  name="button">Actualizar producto</button>
+
+  				</div>
+      </div>
+  </form>
+  <div class="alert alert-danger col-md-7" ng-show="errors.length > 0">
+    <ul>
+      <li ng-repeat="e in errors">{{e}}</li>
+    </ul>
+  </div>
+
+  <div class="alert alert-danger" ng-show="noAnnounceFound">
+    Tu anuncio no ha sido modificado. Intentalo más tarde.
+  </div>
+
+</div>

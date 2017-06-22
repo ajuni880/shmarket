@@ -1,0 +1,58 @@
+<form role="search" name="searchForm" ng-submit="searchForm.$valid && searchAnnounces()">
+    <div class="row">
+        <div class="form-group col-md-8">
+            <label>Buscar producto</label>
+            <input type="text" name="search" ng-model="searchObj.wordToSearch" placeholder="Buscar producto..." class="form-control" />
+        </div>
+
+        <div class="form-group col-md-2">
+            <label>Categoria</label>
+
+            <select class="form-control" title="Selecciona categoria"
+              ng-model="selectCategory"
+              ng-options="category.name for category in categoriesArray">
+              <option value="">--- Todas ---</option>
+        </select>
+        <!-- <pre>{{selectCategory}}</pre> -->
+        </div>
+
+        <div class="form-group col-md-2">
+            <label>Ciudad</label>
+            <select class="form-control" name="city" ng-model="selectCity"  title="Selecciona ciudad"
+              ng-options="city.name for city in citiesArray">
+              <option value="">--- Todas ---</option>
+            </select>
+            <pre>{{selecCity}}</pre>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-2">
+          <label>Min €</label>
+          <input type="number" ng-model="searchObj.minPrice"  class="form-control" name="minPrice" placeholder="50€" min="0" step="1"/>
+      </div>
+
+      <div class="form-group col-md-2">
+          <label>Max €</label>
+          <input type="number" ng-model="searchObj.maxPrice" class="form-control" placeholder="250€" name="maxPrice" min="0" step="1"
+          ng-min="searchObj.minPrice+1"/>
+      </div>
+
+      <!-- <div class="form-group col-md-2">
+        <label for="">Filtrar</label>
+          <select name=""  class="form-control" ng-model="searchObj.operation">
+            <option value="on sale">Venta</option>
+            <option value="exchange">Intercambio</option>
+            <option value="">Precio alto</option>
+        </select>
+      </div> -->
+
+      <div class="form-group col-md-2">
+        <label class="text-hidden">Filtrar</label>
+        <button type="submit" name="search" class="btn btn-search form-control">
+          Buscar <span class="fa fa-search" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+</form>

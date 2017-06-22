@@ -1,0 +1,31 @@
+api key : AIzaSyDo7NKtUdIVpORxngyqfKXSuggnIBXQ9W4
+
+
+User: daw1705
+Password: Rfb5QFRD
+
+Accés SSH | SFTP : Port 22
+Domain: provenapps.cat
+
+MySQL (mateix usuari | password)
+- PHPMyAdmin
+  http://provenapps.cat/phpmyadmin/
+
+- Terminal
+  mysql -udaw1705 -pRfb5QFRD daw1705
+
+Publicació Web:
+Afegiu el contingut al vostre directori public_html/
+
+La vostra pàgina web: http://provenapps.cat/~daw1705/
+
+// try {
+//   $conn->beginTransaction();
+//   $conn->exec("insert into books values (null,'T1','A3',43,2)");
+//   $conn->exec("insert into book values (null,'T4','A4',44,4)");
+//   $conn->commit();
+//
+// } catch (Exception $e) {
+//   $conn->rollBack();
+//   echo "Fallo ".$e->getMessage();
+// }

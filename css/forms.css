@@ -1,0 +1,295 @@
+/*GENERAL CODE*/
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.fa-arrow-left, .fa-times{
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.4s linear;
+  z-index: 9999;
+}
+
+form .btn.btn-primary,.btn.btn-search{
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+span.fa-arrow-left:hover, span.fa-times:hover{
+  background-color: #30373b;
+  color: #fff;
+}
+.margin-top{
+  margin-top: 20px;
+}
+
+.btn-form{
+  display: inline-block;
+  background-color: #30373b;
+  height: 3em;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease-in;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+	border-radius: 2px;
+}
+
+.btn-form:hover{
+  background-color:  #ff9800;
+}
+.has-error{
+  color: #a94442;
+}
+textarea{
+  resize: none;
+}
+
+.closeButton{
+  position: absolute;
+  top: -2px;
+  right: 0;
+  background-color: #fff;
+}
+
+.form-group-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.alert{
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+  border: none;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border-left: 6px solid #a94442;
+}
+
+.text-hidden{
+  visibility: hidden;
+}
+
+/* REGISTER FORM*/
+.registerContainer{
+  min-width: 380px;
+  width: 22%;
+  margin: 4vh auto;
+  overflow: hidden;
+  background-color: white;
+  padding: 15px;
+}
+.registerContainer .btn-primary{
+  display: inline-block;
+  background-color: #30373b;
+  height: 3em;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.4s ease-in;
+  border: 1px solid transparent;
+  margin-top: 5px;
+  margin-bottom: 10px;
+	border-radius: 2px;
+}
+.registerContainer .btn-primary:hover{
+  background-color:  #ff9800;
+}
+textarea.ng-valid.ng-dirty,input.ng-valid.ng-dirty{
+  border-left: 4px solid #009933;
+}
+textarea.ng-invalid.ng-dirty,input.ng-invalid.ng-dirty{
+  border-left: 4px solid #FF0000;
+}
+.registerContainer .form-group span,.my-profile .form-group span{
+  color: #FF0000;
+  font-size: 0.9em;
+  margin-top: 0px;
+}
+
+.photos-details ul li{
+  padding: 5px 10px;
+}
+.disabled-btn{
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .65;
+}
+/* LOGIN FORM*/
+
+.loginContainer{
+  min-width: 330px;
+  width: 20%;
+  margin: 25vh auto;
+  overflow: hidden;
+  background-color: white;
+  padding: 15px;
+  animation: login-form 500ms ease-in-out;
+}
+
+.loginContainer input[type=email],.loginContainer input[type=password]{
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 3%;
+}
+
+.form-control{
+  margin: 0.5em 0;
+  height: 2.7em;
+  border-radius: 2px;
+}
+
+search-form .form-control input{
+  border: 1px solid #ddd;
+}
+.form-control:focus {
+    border: 1px solid #999;
+    outline: none;
+   -webkit-box-shadow: 0;
+   box-shadow: none;
+}
+.loginContainer .btn-primary{
+  display: inline-block;
+  /*background-color: #30373b;*/
+  height: 3em;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.4s ease-in;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+	border-radius: 2px;
+}
+.loginContainer .btn-primary:hover{
+  background-color:  #ff9800;
+}
+
+.loginContainer a{
+  color: #254d60;
+}
+
+.register-link p{
+	padding: 10px 0px;
+}
+.formHeader{
+	position: relative;
+}
+span.fa-window-close{
+	border-radius: 0px;
+	cursor: pointer;
+}
+
+@keyframes login-form {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.register-success-message{
+  position: absolute;
+  top: 5%;
+  left: 0px;
+  background-color: #5cb85c;
+  width: 20%;
+  padding: 20px;
+  border-radius: 3px;
+  animation: register-message 1s;
+}
+.register-success-message p{
+  color: #fff;
+}
+@keyframes register-message {
+  0% {
+    transform: translateX(-400px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+/*UPLOAD ANNOUNCE FORM*/
+upload-announce-form form{
+  width: 80%;
+}
+
+
+.my-profile{
+  width: 100%;
+  border-radius: 2px;
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-profile h3{
+  font-size: 1.5em;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.my-profile form{
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+}
+.user-announces-details{
+  width: 25%;
+  padding-left: 3em;
+}
+
+.user-avatar{
+  display: block;
+  width: 23%;
+  background-color: #fff;
+  padding: 3px;
+  height: 6.5em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.user-avatar:after{
+  content: 'Cambiar imagen';
+  font-size: 0.9em;
+  color: #fff;
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  display: none;
+  transition: all 0.4s;
+}
+
+.user-avatar:hover .user-avatar:before{
+  display: inline-block;
+}
+.user-avatar img, .user-avatar label{
+  width: 100%;
+  height: 100%;
+}
+.bg-primary {
+    color: #fff;
+    background-color: #337ab7 !important;
+}
+.bg-success {
+    color: #fff;
+    background-color: #82b598 !important;
+}
